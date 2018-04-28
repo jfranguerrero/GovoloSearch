@@ -34,7 +34,7 @@ else:
         date=str("{0:0=2d}".format(i))+'/'+str("{0:0=2d}".format(int(mes)))+'/'+year
 
         driver.get('https://booking.govolo.es/motor/vuelo_espera_1.html?typ=flight&vil_dep='+origen+
-        '&vil_arr='+destino+'&dte_dep='+str("{0:0=2d}".format(i))+str("{0:0=2d}".format(int(mes)))+'18&all_ret=non')
+        '&vil_arr='+destino+'&dte_dep='+str("{0:0=2d}".format(i))+str("{0:0=2d}".format(int(mes)))+str(year)[-2:]+'&all_ret=non')
 
         wait = WebDriverWait(driver, 60).until(EC.visibility_of_element_located((By.ID, "div_flightPriceMinB")))
 
